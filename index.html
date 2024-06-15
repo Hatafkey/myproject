@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang=""em>
+<head>
+    <meta charset="uft-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>My cool website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="icon" type="image/x-icon" href="/hat.jpg">
+
+</head>
+ <body>
+    <div class="main">
+     <div class="navbar">
+     <h2 class="logo">:(My website</h2>
+     <div class="menu">
+        <ul>
+        <li><a href="#" onclick="showSection('home')">HOME</a></li>
+        <li><a href="#" onclick="showSection('about')">ABOUT</a></li>
+        <li><a href="#" onclick="showSection('event')">EVENT</a></li>
+        <li><a href="#" onclick="showSection('vlogs')"><VLOGS/a></li>
+        <li><a href="#" onclick="showSection('video')">WATCH VIDEO</a></li>
+        <li><a href="#" onclick="showSection('contact')">CONTACT</a></li>
+        </ul>
+     </div>
+     <div class="search-box">
+    <input class="search-txt" type="text" name="" placeholder="Type to search">
+    <a class="search-btn" href="#"><i class="fas fa-search"></i></a>
+</div>
+</div>
+<div id="home" class="section">
+    <div class="title">
+        <h1>TRAVEL 4EVER</h1>
+    </div>
+    <div class="button">
+        <a href="#" onclick="showSection('video')" class="btn">WATCH VIDEO</a>
+        <a href="#" onclick="showSection('about')" class="btn">LEARN MORE</a>
+    </div>
+</div>
+<div id="about" class="section" style="display:none;">
+    <h1>About Us</h1>
+    <p>We are passionate about travel and aim to share our experiences with the world.</p>
+</div>
+<div id="event" class="section" style="display:none;">
+    <h1>Our Events</h1>
+    <p>Join us in our upcoming travel events and adventures.</p>
+</div>
+<div id="vlogs" class="section" style="display:none;">
+    <h1>Vlogs</h1>
+    <p>Check out our latest travel vlogs and explore the world with us.</p>
+</div>
+<div id="video" class="section" style="display:none;">
+    <h1>Watch Our Video</h1>
+    <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
+<div id="contact" class="section" style="display:none;">
+    <h1>Contact Us</h1>
+    <p>Feel free to get in touch with us for any inquiries or collaborations.</p>
+    <ul>
+        <li>Email: contact@website.com</li>
+        <li>Phone: +254727489825</li>
+        <li>Address: monoriva  Street Name, City, Country</li>
+    </ul>
+</div>
+</div>
+     
+    <script>
+        function showSection(sectionId){
+        var section=document.querySelectorAll(' .section');
+        section. forEach(function(section){
+            section.style.display='none';
+        });
+        var sectionToShow = document.getElementById(sectionId);
+        sectionToShow.style.display = 'block';
+    }
+        
+    </script>
+ </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
