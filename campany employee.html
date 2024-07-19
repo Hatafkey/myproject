@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Pay Calculator</title>
+    <style>
+        body{
+            font-family:Arial,  sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        
+        }
+
+        .container{
+            background-color:#fff ;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h2{
+            text-align: center;
+            color: #333;
+        }
+       label{
+        display:block ;
+        margin-bottom: 8px;
+        color: #555;
+       }
+        input{
+            width: 100%;
+            padding: 8px ;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+       button{
+        width: 100%;
+        padding: 10px;
+        background-color:#28a745 ;
+        border: none;
+        border-radius: 4px;
+        color: #fff;
+        font-size: 16px;
+        }
+
+        .result{
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e9e9cf;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+     </style>
+
+</head>
+<body>
+    <div class="container">
+        <h2>Employee pay Calculator</h2>
+        <label for="name">Employee Name</label>
+        <input type="text"  id="name" placeholder="Enter name">
+
+
+        <label for="hours">Hours Worked</label>
+        <input type="number"  id="hours" placeholder="Enter hours worked">
+
+
+        <label for="rate">Rate per Hour</label>
+        <input type="number"  id="rate" placeholder="Enter rate per hour">
+
+        <button onclick="calculatePay()">Calculate pay</button>
+        <div class="result"  id="result"></div>
+
+    </div>
+    
+    
+    <script>
+       
+        function calculatePay() {
+            // Get input values
+            let name = document.getElementById('name').value;
+            let hoursWorked = document.getElementById('hours').value;
+            let ratePerHour = document.getElementById('rate').value;
+            
+            // Calculate basic pay
+            let basicPay = hoursWorked * ratePerHour;
+            let tax = 0;
+            
+            // Calculate tax based on basic pay
+            if (basicPay > 50000) {
+                tax = basicPay * 0.20;
+            } else if (basicPay >= 20000 && basicPay <= 50000) {
+                tax = basicPay * 0.10;
+            } else {
+                tax = 0;
+            }
+            
+            // Calculate net pay
+            let netPay = basicPay - tax;
+            
+            // Display the result
+            let resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `<strong>${name}</strong><br>Basic Pay: $${basicPay.toFixed(2)}<br>Tax: $${tax.toFixed(2)}<br>Net Pay: $${netPay.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
